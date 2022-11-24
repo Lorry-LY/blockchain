@@ -4,6 +4,8 @@ import IndexView from '../views/IndexView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
 import HomeView from '../views/HomeView.vue'
+import RegisterView from '../views/RegisterView.vue'
+import EmptyView from '../views/EmptyView.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +29,26 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: RegisterView
+  },
+  {
+    path: '/team',
+    name: 'team',
+    component: EmptyView
+  },
+  {
+    path: '/join',
+    name: 'join',
+    component: EmptyView
+  },
+  {
+    path: '/product',
+    name: 'product',
+    component: EmptyView
   }
 ]
 

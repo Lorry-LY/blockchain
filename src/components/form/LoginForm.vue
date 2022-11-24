@@ -3,6 +3,9 @@
     <el-tabs v-model="activeName" @tab-click="tabClick">
       <el-tab-pane label="账号密码登录" name="user_passwd">
         <el-form :label-position="labelPosition" label-width="80px" :model="admin">
+          <el-form-item label="公司名称">
+            <el-input v-model="admin.name" placeholder="公司名称"></el-input>
+          </el-form-item>
           <el-form-item label="账号">
             <el-input v-model="admin.name" placeholder="账号或者手机号"></el-input>
           </el-form-item>
@@ -30,9 +33,9 @@
       </el-tab-pane>
       <el-checkbox v-model="text_checked" class="text_checked">同意协议</el-checkbox> <br>
       <el-button class="vetify_btn">点击验证</el-button><br />
-      <el-button class="login_btn" type="primary" :loading="true">登录</el-button>
+      <el-button class="login_btn" type="primary" :loading="false">登录</el-button>
       <br>
-      <el-link type="primary" route="/" style="margin-top: 20px;">没有账号？注册一个</el-link>
+      <el-link @click="gotoRegister" type="primary" route="/" style="margin-top: 20px;">没有账号？注册一个</el-link>
     </el-tabs>
   </div>
 </template>
@@ -47,6 +50,7 @@ export default {
       labelPosition: 'right',
       admin: {
         name: '',
+        username: '',
         password: '',
         phone: '',
         vetify: null
@@ -59,6 +63,9 @@ export default {
       this.admin.password = ''
       this.admin.phone = ''
       this.admin.vetify = ''
+    },
+    gotoRegister (event) {
+      this.$router.push('register')
     }
   }
 }

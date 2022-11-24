@@ -36,14 +36,14 @@
     <el-menu-item index="/" key="1" class="index_item">我的主页</el-menu-item>
     <el-submenu index="2" key="2" class="product_item">
       <template slot="title">产品列表</template>
-      <el-menu-item index="2-1">产品1</el-menu-item>
-      <el-menu-item index="2-2">产品2</el-menu-item>
-      <el-menu-item index="2-3">产品3</el-menu-item>
+      <el-menu-item index="/product">产品1</el-menu-item>
+      <el-menu-item index="/product">产品2</el-menu-item>
+      <el-menu-item index="/product">产品3</el-menu-item>
     </el-submenu>
     <el-submenu index='3' key="3" class="intro_item">
       <template slot="title">关于我们</template>
-      <el-menu-item index="2-4-1">团队介绍</el-menu-item>
-      <el-menu-item index="2-4-2">打入我们</el-menu-item>
+      <el-menu-item index="/team">团队介绍</el-menu-item>
+      <el-menu-item index="/join">打入我们</el-menu-item>
     </el-submenu>
     <el-menu-item index="3" disabled class="control_item">控制台</el-menu-item>
     <el-menu-item index="/login" class="login_item">登录</el-menu-item>
