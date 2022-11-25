@@ -7,7 +7,7 @@
             <el-input v-model="admin.name" placeholder="公司名称"></el-input>
           </el-form-item>
           <el-form-item label="账号">
-            <el-input v-model="admin.name" placeholder="账号或者手机号"></el-input>
+            <el-input v-model="admin.username" placeholder="账号或者手机号"></el-input>
           </el-form-item>
           <el-form-item label="密码">
             <el-input v-model="admin.password" type="password" placeholder="密码"></el-input>
@@ -33,7 +33,7 @@
       </el-tab-pane>
       <el-checkbox v-model="text_checked" class="text_checked">同意协议</el-checkbox> <br>
       <el-button class="vetify_btn">点击验证</el-button><br />
-      <el-button class="login_btn" type="primary" :loading="false">登录</el-button>
+      <el-button class="login_btn" type="primary" :loading="false" :disabled="!text_checked">登录</el-button>
       <br>
       <el-link @click="gotoRegister" type="primary" route="/" style="margin-top: 20px;">没有账号？注册一个</el-link>
     </el-tabs>

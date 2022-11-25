@@ -91,7 +91,7 @@ export default {
   height: 70%;
   top: 20%;
   left: 0;
-  right: -30%;
+  right: -2%;
   bottom: 0;
   margin: auto;
 }
@@ -113,10 +113,12 @@ export default {
   /* width: 80%;
     height: 100%; */
   top: 0;
-  left: -10%;
+  left: -20%;
   right: 0;
   bottom: 0;
   margin: auto;
+  width: 1000px;
+  height: 700px;
 }
 
 .el-col {

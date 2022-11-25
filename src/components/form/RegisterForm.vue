@@ -25,9 +25,29 @@
     </el-form>
 
     <div v-show="activeStep == 1" class="sureForm">
-      <div class="text_line">公司名称：{{companyInfo.name}}</div>
-      <div class="text_line">超级管理员：{{companyInfo.username}}</div>
-      <div class="text_line">公司区域社会统一信用代码:<br>{{companyInfo.code}}</div>
+      <el-descriptions class="margin-top" :column="1" border style="width:50%;margin:auto;"> 
+        <el-descriptions-item>
+          <template slot="label">
+            <i class="el-icon-user"></i>
+            公司名称
+          </template>
+          {{companyInfo.name}}
+        </el-descriptions-item>
+        <el-descriptions-item>
+          <template slot="label">
+            <i class="el-icon-mobile-phone"></i>
+            超级管理员
+          </template>
+          {{companyInfo.username}}
+        </el-descriptions-item>
+        <el-descriptions-item>
+          <template slot="label">
+            <i class="el-icon-location-outline"></i>
+            公司区域社会统一信用代码
+          </template>
+          {{companyInfo.code}}
+        </el-descriptions-item>
+      </el-descriptions>
       <div>
         <el-button style="margin-top: 12px;margin-right: 20px;" @click="previousStep" type="primary">返回修改</el-button>
         <el-button style="margin-top: 12px;" @click="register" type="success">注册</el-button>
@@ -93,7 +113,12 @@ export default {
       });
     },
     register() {
-      
+      this.$confirm('注册成功，前往登录界面？')
+        .then(_ => {
+          this.$router.push('/login')
+          done();
+        })
+        .catch(_ => { });
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
